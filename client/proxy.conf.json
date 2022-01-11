@@ -1,0 +1,14 @@
+{
+    "/api/*" : {
+        "target" : "http://127.0.0.1:2525",
+        "secure" : false,
+        "logLevel" : "debug",
+        "changeOrigin" : true
+    },
+    "/iploads/*" : {
+        "target" : "http://127.0.0.1:2525",
+        "secure" : false,
+        "logLevel" : "debug",
+        "changeOrigin" : true
+    }
+}

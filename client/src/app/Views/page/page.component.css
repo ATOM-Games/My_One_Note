@@ -1,0 +1,47 @@
+@import url('../../../fonts.css');
+#contextp {
+    position: fixed;
+    z-index: 999999;
+    border-radius: 5px;
+    background-color: #0000001a;
+    padding: 5px;
+}
+#contextp button {
+    display: block;
+    width: 100%;
+    border-radius: 2px;
+    background-color: #fff;
+    border: solid 1px ;
+}
+.newpage {
+    font-style: italic;
+    margin-right: 20px;
+    border-style: none;
+    background-color: #fff;
+    color:rgb(105, 146, 170);
+    text-shadow: #000;
+    height: 100%;
+    width: 100%;
+}
+.nav-link {
+    border-top: 1px solid rgb(221, 221, 221);
+    border-radius: 0;
+    width: 100%;
+    text-align: left;
+    border-left: 1px solid rgb(255, 255, 255);
+    margin-left: 0px;
+    transition: 0.3s;
+    font-family: ru_03;
+    color :rgb(37, 42, 44);
+}
+.nav-link:hover {
+    border-top: 1px solid rgb(221, 221, 221);
+    border-radius: 0;
+    width: 100%;
+    text-align: left;
+    border-left: 1px solid rgb(221, 221, 221);
+    margin-left: 10px;
+    transition: 0.3s;
+    font-family: ru_03;
+    color :rgb(20, 22, 22);
+}

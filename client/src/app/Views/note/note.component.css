@@ -1,0 +1,36 @@
+@import url('../../../fonts.css');
+
+.area { width: 100%; resize:initial; border: black 0px; }
+.area:focus { width: 100%; resize: none; border: 1px solid #000; border-radius: 5px; box-shadow: 0 0 5px #000; }
+
+.b_OK { background-color: rgb(245, 245, 245); border-radius: 3px; border: 1px solid rgb(26, 77, 92); }
+.b_sh { box-shadow: 0 0 0px #000; transition: 0.5s; }
+.b_sh:hover { box-shadow: 0 0 5px #000; transition: 0.5s; }
+.b_collapsed { height: 0px; width: 0%; transition: 0.5s; }
+.b_active { height: 30px; width: 50%; transition: 0.5s; }
+
+#contextm {
+    position: fixed;
+    z-index: 999999;
+    border-radius: 5px;
+    background-color: #0000001a;
+    padding: 5px;
+}
+#contextm button {
+    display: block;
+    width: 100%;
+    border-radius: 2px;
+    background-color: #fff;
+    border: solid 1px ;
+}
+
+.newnote {
+    font-style: italic;
+    margin-right: 20px;
+    border-style: none;
+    background-color: #fff;
+    color:rgb(105, 146, 170);
+    text-shadow: #000;
+    height: 100%;
+    width: 100%;
+}

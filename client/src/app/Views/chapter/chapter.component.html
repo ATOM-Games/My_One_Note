@@ -1,0 +1,16 @@
+<div id="contextcs" [hidden]="!context" (click)="context_off()">
+  <button (click)="editChaptText()">редактировать</button>
+  <button (click)="deleteChapt()">удалить</button>
+</div>
+<div class="pagetitle">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation" *ngFor="let chapter of chapters">
+          <input *ngIf="( chapter._id==editId && context==false )" (click)="chaptClick($event)" type="text" name="chapt_{{chapter._id}}" [value]='chapter.title' (blur)="NewChapt_focusOff($event)"/>
+          <button *ngIf="!( chapter._id==editId && context==false )" class="nav-link" [class.b_1p]="equalsChapter(chapter._id)" name="chapt_{{chapter._id}}" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" (click)="chapter_click(chapter._id)" (contextmenu)="con_men($event, chapter._id)">{{chapter.title}}</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button *ngIf="!new_chapt" class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" (click)="NewChapter_click()" class="newchapt">Новая глава</button>
+          <input *ngIf="new_chapt" (click)="chaptClick($event)" type="text" id='new_chapt' (blur)="NewChapt_focusOff($event)" class="nav-link"/>
+        </li>
+      </ul>
+</div>

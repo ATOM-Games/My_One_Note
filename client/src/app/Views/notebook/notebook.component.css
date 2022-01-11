@@ -1,0 +1,29 @@
+@import url('../../../fonts.css');
+#contextb {
+    position: fixed;
+    z-index: 999999;
+    border-radius: 5px;
+    background-color: #0000001a;
+    padding: 5px;
+}
+#contextb button {
+    display: block;
+    width: 100%;
+    border-radius: 2px;
+    background-color: #fff;
+    border: solid 1px ;
+}
+
+.collapsed {
+    background: linear-gradient(45deg, rgb(27, 112, 1), #fff, rgba(1,41,112,0.1));
+    transition: 0.5s;
+    font-family: ru_02;
+}
+.collapsed:hover {
+    background: linear-gradient(45deg, rgba(0, 27, 73, 0.1), #fff, rgba(0, 27, 73, 0.1));
+    transition: 0.5s;
+    font-family: ru_02;
+}
+.sidebar {
+    background-color: rgb(225, 235, 245);
+}

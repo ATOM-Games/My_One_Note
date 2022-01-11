@@ -1,0 +1,41 @@
+<div id="contextm" [hidden]="!context" (click)="context_off()">
+    <button (click)="editNoteText()">редактировать</button>
+    <button (click)="deleteNote()">удалить</button>
+</div>
+<div class="card" *ngIf="isPage()">
+    <div class="card-body">
+        <div class="d-flex align-items-start">
+            <div class="tab-content col-12" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <textarea class="area" id="new_area"
+                    (keydown)="onSearchChange($event)"
+                    (blur)="focus_off($event)"
+                    [value]='NewNote' placeholder="новая запись"
+                    (click)="Note_click($event)" *ngIf="createNewNote"></textarea>
+                    <button (click)="creatNewNote()" *ngIf="!createNewNote" class="newnote">новая запись</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card" *ngFor="let one_note of notes">
+    <div class="card-body">
+        <div class="d-flex align-items-start">
+            <div class="tab-content col-12" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                aria-labelledby="v-pills-home-tab" (contextmenu)="con_men($event, one_note._id)">
+                    <textarea class="area" name = "area_{{one_note._id}}" 
+                    (loaded)="noteResize($event)"
+                    (keydown)="onSearchChange($event)"
+                    (blur)="focus_off($event)"
+                    [value]='one_note.text' placeholder="новая запись"
+                    (click)="Note_click($event)" *ngIf="( one_note._id==editId && context==false )">
+                        {{one_note.text}}
+                    </textarea>
+                    <div style="white-space: pre-wrap" *ngIf="!( one_note._id==editId && context==false )" id="dv_{{one_note._id}}">{{one_note.text}}</div>
+                </div>
+            </div>
+        </div>
+        <i></i>
+    </div>
+</div>

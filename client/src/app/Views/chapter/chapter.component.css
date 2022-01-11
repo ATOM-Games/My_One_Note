@@ -1,0 +1,35 @@
+@import url('../../../fonts.css');
+
+#contextcs {
+    position: fixed;
+    z-index: 999999;
+    border-radius: 5px;
+    background-color: #0000001a;
+    padding: 5px;
+}
+#contextcs button {
+    display: block;
+    width: 100%;
+    border-radius: 2px;
+    background-color: #fff;
+    border: solid 1px ;
+}
+.newchapt {
+    font-style: italic;
+    margin-right: 20px;
+    border-style: none;
+    color:rgb(105, 146, 170);
+    text-shadow: #000;
+    height: 100%;
+    width: 100%;
+    margin-left: 5px;
+}
+.nav-link {
+    background-color: #fff;
+    margin-left: 5px;
+    font-family: ru_03;
+    color :rgb(37, 42, 44);
+}
+.pagetitle {
+    border-bottom: 4px ridge rgba(88, 134, 161, 0.6);
+}

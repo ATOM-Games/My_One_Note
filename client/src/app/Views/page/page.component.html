@@ -1,0 +1,23 @@
+<div id="contextp" [hidden]="!context" (click)="context_off()">
+    <button (click)="editPageText()">редактировать</button>
+    <button (click)="deletePage()">удалить</button>
+</div>
+<div class="row">
+    <div class="col-lg-9">
+        <app-note></app-note>
+    </div>
+    <div class="col-lg-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true" (click)="NewPage_click()" *ngIf="(isChapter() && !new_page)" class="newpage">Новая страница</button>
+                    <div *ngIf="new_page"><input (click)="Pageclick($event)" type="text" id='new_page' (blur)="NewPage_focusOff($event)"/></div>
+                    <div *ngFor="let one_page of pages_ch">
+                        <button *ngIf="!( one_page._id==editId && context==false )" class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true" (click)="Page_click(one_page._id)" (contextmenu)="con_men($event, one_page._id)">{{one_page.title}}</button>
+                        <div *ngIf="( one_page._id==editId && context==false )"><input (click)="Pageclick($event)" type="text" name="page_{{one_page._id}}" [value]='one_page.title' (blur)="NewPage_focusOff($event)"/></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

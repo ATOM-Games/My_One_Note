@@ -1,0 +1,20 @@
+<div id="contextb" [hidden]="!context" (click)="context_off()">
+  <button (click)="editBookText()">редактировать</button>
+  <button (click)="deleteBook()">удалить</button>
+</div>
+<aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <button *ngIf="!new_book" class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" style="width:100%;" (click)="NewBook_click()">
+            <i class="bi bi-journal"> новая книга</i><span>+</span>
+          </button>
+          <input *ngIf="new_book" (click)="bookClick($event)" type="text" id='new_book' (blur)="NewBook_focusOff($event)" class="nav-link collapsed" style="width: 100%;"/>
+        </li>
+        <li class="nav-item" *ngFor="let notebook of notebooks" (click)="notebook_click(notebook._id)">
+            <button *ngIf="!( notebook._id==editId && context==false )" class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" style="width:100%;" (contextmenu)="con_men($event, notebook._id)">
+              <i class="bi" [class.bi-journal]="!equalsBook(notebook._id)" [class.bi-journal-text]="equalsBook(notebook._id)"></i><span>{{notebook.title}}</span>
+            </button>
+            <input *ngIf="( notebook._id==editId && context==false )" (click)="bookClick($event)" type="text" name="book_{{notebook._id}}" [value]='notebook.title' (blur)="NewBook_focusOff($event)"/>
+          </li><!-- End Forms Nav -->
+    </ul>
+  </aside><!-- End Sidebar-->
